@@ -7,8 +7,8 @@ body{
 }
 
 body{
-  background-image :url('../img/bg.jpg');
-  background-size :cover;
+  background :url('../images/bg.jpg') ;
+  background-size :100% auto;
   background-position :center center;
   font-size :14px;
   color: #4d4d4d;

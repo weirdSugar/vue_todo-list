@@ -19,15 +19,11 @@ const config={
                 loader:'vue-loader'
             },
             {
-                test: /\.jsx$/,
-                loader: 'babel-loader'
-            },
-            {
                 test:/\.css$/,
                 use:[
                     'style-loader',
-                    'postcss-loader',
                     'css-loader',
+                    'postcss-loader',
                 ]
             },
             {
