@@ -17,6 +17,7 @@
      :filter="filter"
      :todos="todos"
      @toggleNowState="toggleState"
+     @clearAllCompletedItems="clearAllCompleted"
     />
   </section>
 </template>
@@ -27,14 +28,8 @@ let id=0;
 export default {
   data(){
     return {
-      todos:[]
-      // {
-      //   id:0,
-      //   completed:false,
-      //   content:'i am a f item'
-      // },
-      ,
-      filter:'All'
+      todos:[],
+      filter:'all'
     }
   },
   components:{
@@ -43,9 +38,11 @@ export default {
   },
   methods:{
     addTodo(e){
+      const val=e.target.value.trim()
+      if(val=='')return 
       this.todos.unshift({
         id:id++,
-        content:e.target.value.trim(),
+        content:val,
         completed:false
       })
       e.target.value=''
@@ -56,6 +53,14 @@ export default {
     },
     toggleState(state){
       this.filter=state
+    },
+    clearAllCompleted(){
+      // this.todos.every((itm,index)=>{
+      //   if(itm.completed){
+      //     this.todos.splice(index,1)
+      //   }
+      // })
+      this.todos=this.todos.filter(itm => !itm.completed)
     }
   },
   computed:{

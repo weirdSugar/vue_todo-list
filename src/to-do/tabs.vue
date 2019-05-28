@@ -33,7 +33,9 @@ export default {
     };
   },
   methods: {
-    clearAllCompleted() {},
+    clearAllCompleted() {
+      this.$emit('clearAllCompletedItems')
+    },
     toggleState(state) {
       this.$emit('toggleNowState',state)
     }
