@@ -5,7 +5,6 @@
       class='toggle'
       v-model="todo.completed"
     >
-    <!-- input checkbox 邊框 圓形 -->
     <label>{{todo.content}}</label>
     <button class='destory' @click="deleteTodo"></button>
   </div>
@@ -19,7 +18,9 @@ export default {
     }
   },
   methods:{
-    deleteTodo(){}
+    deleteTodo(){
+      this.$emit('del',this.todo.id)
+    }
   }
 }
 </script>
@@ -38,7 +39,7 @@ export default {
 .todo-item label {
   white-space: pre-line;
   word-break: break-all;
-    padding: 15px 60px 15px 15px;
+  padding: 15px 60px 15px 15px;
   display: block;
   margin-left: 45px;
   line-height: 1.2;
@@ -57,8 +58,7 @@ export default {
   position: absolute;
   top: 0;
   bottom: 0;
-  margin: auto 0;
-  /* border: 1px black; */
+  margin: auto ;
   appearance: none;
   outline: none;
 }
