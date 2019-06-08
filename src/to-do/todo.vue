@@ -80,8 +80,7 @@ export default {
   margin :0 auto ;
   box-shadow :0 0 5px #666;
   }
-.add-input{
-  position: relative;
+.add-input{ 
   width :100%;
   font-size :24px;
   font-family :inherit ;

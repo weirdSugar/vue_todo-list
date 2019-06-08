@@ -1,5 +1,5 @@
 <template>
-  <div :class="['todo-item',{completed:todo.completed}]">
+  <div :class="['todo-item',{'completed':todo.completed}]">
     <input 
       type="checkbox"
       class='toggle'
@@ -81,7 +81,6 @@ export default {
   margin: auto 0;
   font-size: 30px;
   color: #cc9a9a;
-  transition: color .2s ease-out;
   background-color: transparent;
   appearance: none;
   border-width: 0;
